@@ -47,6 +47,13 @@ public class Libro {
 		this.titulo = titulo;
 		this.categoria = categoria;
 	}
+	
+	public Libro(String isbn) {
+		super();
+		this.isbn = isbn;
+		this.titulo = "";
+		this.categoria = "";
+	}
 
 	public static List<String> buscarTodasLasCategorias() {
 		String consultaSQL = "select distinct(categoria) as categoria from Libros";

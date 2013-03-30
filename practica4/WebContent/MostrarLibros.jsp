@@ -35,7 +35,7 @@
 				 listaDeLibros=Libro.buscarTodos();
 			}
 			else {
-			 listaDeLibros=Libro.buscarPorCategoria(request.getParameter("categoria"));
+				listaDeLibros=Libro.buscarPorCategoria(request.getParameter("categoria"));
 			}
 			 for(Libro libro:listaDeLibros){ %>
 				 <%=libro.getIsbn()%>
