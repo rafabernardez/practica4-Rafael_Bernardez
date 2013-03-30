@@ -83,4 +83,21 @@ public class Libro {
 		
 		return listadeLibros.get(0);
 	}
+	
+	public static List<Libro> buscarPorCategoria(String categoria) {
+		String consultaSQL = "select isbn,titulo,categoria from Libros where categoria='" + categoria + "'";
+		DataBaseHelper<Libro> helper = new DataBaseHelper<Libro>();
+		List<Libro> listaDeLibros = helper.seleccionarRegistros(consultaSQL,Libro.class);
+		
+		return listaDeLibros;
+	}
+	
+	public void salvar() {
+		String consultaSQL = "update  Libros  set titulo='" + this.titulo
+				+ "', categoria='" + categoria + "' where isbn='" + isbn + "'";
+		
+		DataBaseHelper<Libro> helper = new DataBaseHelper<Libro>();
+		helper.modificarRegistro(consultaSQL);
+
+	}
 }
